@@ -1,68 +1,68 @@
 # idawgz32
 
-### A mechanical keyboard, in this economy??
+### Un teclado mecánico, ¿en esta economía?
 
-An experimental ultraportable and ultra affordable pocket keyboard that costs $5 worth of materials to make. The project goal is to make a keyboard that can be given away as freebies or gifts. Entire PCBA can be produced by JLCPCB. Uses a CH552 as its MCU, and runs FAK firmware.
+Un teclado de bolsillo experimental, ultraportátil y muy asequible, cuya fabricación cuesta menos de 5 dólares en materiales. El objetivo del proyecto es hacer un teclado que se puede dar como obsequios o regalos. Todo el PCBA puede ser producido por JLCPCB. Utiliza un CH552 como MCU, y ejecuta el firmware FAK.
 
 ![a photo of an idawgz32](https://raw.githubusercontent.com/ChrisChrisLoLo/idawgz32/main/images/PXL_20240225_225159875.jpg)
 
-# Status
-v0.0 PCBs technically work, though the current smd switches used have a high failure rate and are assumed to be of poor quality. v2.0 PCBs are in progress and will use the EVQP0N02B switch instead, which are known to work well.
+# Estado
+Los PCBs v0.0 técnicamente funcionan, aunque los actuales interruptores smd utilizados tienen una alta tasa de fallos y se supone que son de mala calidad. Los PCBs v2.0 están en progreso y utilizarán el interruptor EVQP0N02B en su lugar, que se sabe que funcionan bien.
 
-I recommend waiting for v2.0 to come out, though v0.0 has some workarounds outlined in my blog post.
+Recomiendo esperar a que salga la v2.0, aunque la v0.0 tiene algunas soluciones que se describen en la entrada de mi blog.
 
-Disclaimer is that this design has very low tolerances for its key switches. You will likely need a 3D printer such as a Bambu Lab A1/A1 mini/P1P/P1S and set the slicing layer resolution to 0.08mm. Printers like the Prusa i3/mini may also work, but have not been tested.
+Hay que tener en cuenta que este diseño tiene tolerancias muy bajas para los interruptores de las teclas. Es probable que necesites una impresora 3D como una Bambu Lab A1/A1 mini/P1P/P1S y ajustar la resolución de la capa de corte a 0,08 mm. Impresoras como la Prusa i3/mini también pueden funcionar, pero no han sido probadas.
 
-# About
-I got excited with the new recent trend of building keyboards with the CH552 chip, and wanted to expand on my [pusheenz40](https://github.com/ChrisChrisLoLo/pusheenz40) design, with the end goal of building a keyboard that costs so little that I can freely give it away as a small gift or as a freebie at conventions. The size of the board, layout, and component selection (or lack there of) are all in service of getting the price as low as possible.
+# Acerca de
+Me emocioné con la nueva tendencia reciente de la construcción de teclados con el chip CH552, y quería ampliar mi [pusheenz40](https://github.com/ChrisChrisLoLo/pusheenz40) con el objetivo final de construir un teclado que cueste tan poco que pueda regalarlo en convenciones. El tamaño de la placa, el diseño y la selección de componentes (o la falta de ellos) están todos al servicio de conseguir el precio más bajo posible.
 
-You can read more about the experiment and the design process in my blog post here: https://chrischrislolo.github.io/orthoLabLogs/idawgs32-how-i-made-a-full-keyboard-for-dollar6.html
+Puedes leer más sobre el experimento y el proceso de diseño en la entrada de mi blog aquí: https://chrischrislolo.github.io/orthoLabLogs/idawgs32-how-i-made-a-full-keyboard-for-dollar6.html
 
-Case files include 3MF files, STEP files that include the top case housing, as well as the buttons.
+Los archivos de la carcasa incluyen archivos 3MF, archivos STEP que incluyen la carcasa superior, así como los botones.
 
 
 ![a idawgz32](https://raw.githubusercontent.com/ChrisChrisLoLo/idawgz32/main/images/PXL_20240225_201119535.jpg)
 
 
-# Case
-The case files can be found in the `case` directory.
+# Caso
+Los archivos del caso se pueden encontrar en el directorio `case`.
 
-3D printed cases can and should use the finest resolution possible on your printer, and ideally should use a higher end printer due to it's low tolerances. The models have been tested to work with the Bambu lab A1 and P1S at a layer height and detail setting of 0.08mm (extra fine). It's recommended to use a high quality and/or a newer printer.
+Los casos impresos en 3D pueden y deben utilizar la resolución más fina posible en su impresora, y lo ideal sería utilizar una impresora de gama alta debido a sus bajas tolerancias. Los modelos han sido probados para trabajar con el laboratorio Bambu A1 y P1S en una altura de capa y la configuración de detalle de 0,08 mm (extra fino). Se recomienda utilizar una impresora de alta calidad y/o más reciente.
 
-Lubricating the case rails with something like krytox 205g0 is highly recommended (and a near must for v0.0 boards), especially when using a CNC aluminum case. 
+Lubricar los railes de la carcasa con algo como krytox 205g0 es altamente recomendable (y casi obligatorio para placas v0.0), especialmente cuando se usa una carcasa de aluminio CNC. 
 
 ## PCB
-You can find the PCB source files in the `pcb` folder. The BOM files can be found in this folder.
+Puedes encontrar los archivos fuente de la PCB en la carpeta `pcb`. Los archivos BOM se pueden encontrar en esta carpeta.
 
-![idawgz32 pcb](https://raw.githubusercontent.com/ChrisChrisLoLo/idawgz32/main/images/PXL_20240225_224453990.jpg)
+pcb](https://raw.githubusercontent.com/ChrisChrisLoLo/idawgz32/main/images/PXL_20240225_224453990.jpg)
 
-## Directory Structure
+## Estructura del directorio
 - `case`
-    You can find the files you need in this folder to print out a case for the keyboard
+    En esta carpeta se encuentran los archivos necesarios para imprimir una funda para el teclado
 - `drafts`
-    Stores any ergogen or intermediate information used in making the case
+    Almacena cualquier información ergogénica o intermedia utilizada en la fabricación de la funda
 - `pcb`
-    Kicad project relating to the project. Contains the BOM, placement files, and gerbers
+    Proyecto Kicad relativo al proyecto. Contiene la lista de materiales, los archivos de colocación y los gerbers
    
 ## BOM
 - 1 PCBA
-  - The PCB will include all electrical parts required, including switches.
-- 1 Aluminum CNC upper case or 3DP upper case
-- 32 3D printed buttons
-- 8 3mm M1.6 screws (go for flathead for a more flush fit, though other head types should also work)
-- 4-8 (ideally 8) 1-2mm bumpons (something like Sj5302 is a good place to start)
+  - El PCB incluirá todas las partes eléctricas necesarias, incluyendo los interruptores.
+- 1 carcasa superior de aluminio CNC o carcasa superior 3DP
+- 32 botones impresos en 3D
+- 8 tornillos M1.6 de 3mm (de cabeza plana para un ajuste más al ras, aunque otros tipos de cabeza también deberían funcionar)
+- 4-8 (idealmente 8) 1-2mm bumpons (algo como Sj5302 es un buen lugar para empezar)
 
-## Assembly
-Flash the pcb with my FAK branch (see below section). Bootmagic is enabled, so using the top left key to flash from here on out is doable.
+## Montaje
+Flasheo de la pcb con mi rama FAK (ver sección de abajo). Bootmagic está habilitado, así que usar la tecla superior izquierda para flashear de aquí en adelante es posible.
 
-Pop the 3D printed buttons/keycaps into the case, and make sure they don't stick and can freely move up and down. If they do stick (e.g. need noticable force applied to pop out), confirm that you're printing at the finest detail setting. All keys need to be flush against the case. Once the switches are in place, over lap the pcb over the case. Gently press the pcb to make sure a button isn't pressed down.
+Coloca los botones impresos en 3D en la carcasa, y asegúrate de que no se pegan y pueden moverse libremente arriba y abajo. Si se atascan (por ejemplo, si hay que aplicar una fuerza considerable para que salgan), comprueba que estás imprimiendo con la configuración de detalle más fina. Todas las teclas deben estar alineadas con la carcasa. Una vez que los interruptores estén en su sitio, recubra la placa sobre la carcasa. Presione suavemente la pcb para asegurarse de que un botón no se presiona hacia abajo.
 
-Optionally wrap the board with a rubber band to hold it in place and flip it over to validate everything. Then gently press every button to make sure if it can actuate. If a button is very sticky, reprinting or sanding may be required. If there's slight friction on the keys return, this should slowly go away as the keyboard is broken in. If there's a button that won't actuate, it's possible that the button is misaligned. Flip the board back around, remove the rubber band and pcb, and make sure the problematic key is flush against the case. Place back pcb around and test until all keys properly acutate.
+Opcionalmente envuelve la placa con una goma elástica para mantenerla en su sitio y dale la vuelta para validarlo todo. A continuación, presione suavemente cada botón para asegurarse de si se puede accionar. Si un botón está muy pegajoso, puede ser necesario volver a imprimirlo o lijarlo. Si hay una ligera fricción en el retorno de las teclas, ésta debería desaparecer lentamente a medida que el teclado se vaya asentando. Si hay un botón que no se acciona, es posible que esté desalineado. Dale la vuelta a la placa, retira la goma elástica y la pcb, y asegúrate de que la tecla problemática está a ras de la carcasa. Vuelva a colocar la placa y pruebe hasta que todas las teclas se accionen correctamente.
 
-Then turn the keybard around one last time so the pcb is facing upwards. Screw on the screws and test one last time.
+A continuación, gire el teclado una última vez para que la placa quede hacia arriba. Atornille los tornillos y pruebe una última vez.
 
-Finally, place on the rubber bumpons
+Finalmente, coloque los topes de goma
 
 ## Firmware
-Branch and fork of FAK Firmware can be found here:
+La rama y el tenedor de FAK Firmware se puede encontrar aquí:
 https://github.com/ChrisChrisLoLo/fak/tree/idawgz32
